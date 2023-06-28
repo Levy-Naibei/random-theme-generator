@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    /* align-items: center; */
+}
+
+.theme_container {
+    padding: 0.5rem;
+}
+
+.color_palette {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.palette {
+    width: 30px;
+    height: 40px;
+    margin: 5px;
+}
+
+.design_style {
+    padding: 1rem;
+}
