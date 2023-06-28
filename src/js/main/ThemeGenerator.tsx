@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import './theme.css'
 
 interface Theme {
@@ -10,6 +11,13 @@ const ThemeGenerator: React.FC = () => {
   const [designStyle, setDesignStyle] = useState<string>('');
   const [colorPalette, setColorPalette] = useState<string[]>([]);
   const [savedThemes, setSavedThemes] = useState<Theme[]>([]);
+
+  useEffect(() => {
+    const savedThemes = localStorage.getItem('savedThemes');
+    if (savedThemes) {
+      setSavedThemes(JSON.parse(savedThemes));
+    }
+  }, []);
 
   const generateColorPalette = () => {
     let colors = [];
@@ -34,10 +42,12 @@ const ThemeGenerator: React.FC = () => {
     setSavedThemes([...savedThemes, theme]);
     setColorPalette([]);
     setDesignStyle('');
+    localStorage.setItem('savedThemes', JSON.stringify([...savedThemes, theme]));
   };
 
   const clearSavedThemes = () => {
     setSavedThemes([]);
+    localStorage.clear();
   };
 
   const getRandomHexColor = () => {
@@ -50,9 +60,7 @@ const ThemeGenerator: React.FC = () => {
   }
 
   return (
-    <div className="App"
-    // style={{backgroundColor: "grey"}}
-    >
+    <div className="App">
       <button className="custom-btn" onClick={generateColorPalette}>Generate Palette</button>
       <button className="custom-btn" onClick={generateDesignStyle}>Generate Style</button>
       <button className="custom-btn" onClick={saveTheme}>Save Theme</button>
