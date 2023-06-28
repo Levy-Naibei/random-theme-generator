@@ -40,9 +40,9 @@ const config: CEP_Config = {
     sourceMap: true,
   },
   zxp: {
-    country: "KEN",
-    province: "Central",
-    org: "dev Inc.",
+    country: "US",
+    province: "CA",
+    org: "MyCompany",
     password: "mypassword",
     tsa: "http://timestamp.digicert.com/",
     sourceMap: false,

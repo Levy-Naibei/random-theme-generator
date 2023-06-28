@@ -1,5 +1,7 @@
 .app {
     margin-top: 10%;
+    background-color: bisque;
+    padding: 0.5rem;
 }
 
 .app-header {
