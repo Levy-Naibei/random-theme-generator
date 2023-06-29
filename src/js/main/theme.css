@@ -4,7 +4,7 @@
 }
 
 .app_sub_headers {
-    color: #414f6b;
+    color: #ffffff;
     border-bottom: 0.25px solid #414f6b;
     max-width: 35%;
     margin: 0 auto 1rem;
@@ -78,4 +78,5 @@
 
 .theme-style {
     font-weight: bold;
+    color: #ffffff;
 }
